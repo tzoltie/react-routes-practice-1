@@ -4,6 +4,7 @@ import { appsData, productsData } from './data.js';
 import Home from './pages/Home';
 import ProductsPage from './pages/Products';
 import './App.css';
+import AppsPage from './pages/Apps/index.jsx';
 
 export default function App() {
   const [products, setProducts] = useState(productsData);
@@ -23,6 +24,9 @@ export default function App() {
             <li>
               <Link to="/products">Products</Link>
             </li>
+            <li>
+              <Link to="/appsPage">Apps</Link>
+            </li>
           </ul>
         </nav>
       </header>
@@ -32,6 +36,7 @@ export default function App() {
           element={<ProductsPage products={products} />}
         />
         <Route path="/" element={<Home />} />
+        <Route path='/appsPage' element={<AppsPage apps={apps}/>}/>
       </Routes>
     </div>
   );
